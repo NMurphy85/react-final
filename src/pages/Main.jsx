@@ -1,9 +1,7 @@
 import React, { useState } from "react"
 
-const Main = () => {
+const Main = ( { query, setQuery, sortBy, setSortBy } ) => {
   const [searchTerm, setSearchTerm] = useState([])
-const [query, setQuery] = useState([])
-const [sortBy, setSortBy] = useState("")  
   return (
     <div>
       
