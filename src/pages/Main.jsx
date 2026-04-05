@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from "react"
 
 const Main = () => {
+  const [searchTerm, setSearchTerm] = useState([])
+const [query, setQuery] = useState("")
   return (
     <div>
       
@@ -9,7 +11,8 @@ const Main = () => {
      <form 
      className="search-form" 
      id="searchForm">
-      <input 
+      <input value={query}
+      onChange={(e) => setQuery(e.target.value)}
       className="search-form__input" 
       type="text" 
       id="searchInput" 
@@ -23,7 +26,7 @@ const Main = () => {
             </div>
         </div>
         <div className="filter__wrap">
-      <select id="filter" onChange className="filter filter--bold">
+      <select id="filter" onChange={(e) => setQuery(e.target.value)} className="filter filter--bold">
         <option className="filter--bold" defaultValue="" disabled selected>Sort</option>
         <option className="filter--bold" defaultValue="LOW_TO_HIGH">Search, Low to High</option>
         <option className="filter--bold" defaultValue="HIGH_TO_LOW">Search, High to Low</option>
