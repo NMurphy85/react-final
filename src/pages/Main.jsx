@@ -29,15 +29,15 @@ const [sortBy, setSortBy] = useState("")
         </div>
         <div className="filter__wrap">
       <select id="filter"
-      onChange={(e) => setSortBy(e.target.value)}
+      value={sortBy} onChange={(e) => 
+        setSortBy(e.target.value)}
        className="filter filter--bold"
-       value={sortBy}
        >
         <option  value="">Sort</option>
-        <option className="filter--bold" defaultValue="LOW_TO_HIGH">Search, Low to High</option>
-        <option className="filter--bold" defaultValue="HIGH_TO_LOW">Search, High to Low</option>
-        <option className="filter--bold" defaultValue="YEAR--LOW">Year, Low to High</option>
-        <option className="filter--bold" defaultValue="YEAR--HIGH">Year, High to Low</option>
+        <option className="filter--bold" value="LOW_TO_HIGH">Search, Low to High</option>
+        <option className="filter--bold" value="HIGH_TO_LOW">Search, High to Low</option>
+        <option className="filter--bold" value="YEAR--LOW">Year, Low to High</option>
+        <option className="filter--bold" value="YEAR--HIGH">Year, High to Low</option>
       </select>
       </div>
    
