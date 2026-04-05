@@ -12,16 +12,16 @@ const Home = () => {
  const [searchTerm, setSearchTerm] = useState([]);
  const sortedMovies = [...movies].sort((a, b) => {
 if (sortBy === "LOW_TO_HIGH")  
-       return sortedMovies.sort((a, b) => a.Title.localeCompare(b.Title));
+       return  a.Title.localeCompare(b.Title);
       
       if (sortBy === "HIGH_TO_LOW") 
-        return sortedMovies.sort((a, b) => b.Title.localeCompare(a.Title));
+        return  b.Title.localeCompare(a.Title);
       
       if (sortBy === "YEAR--LOW") 
-        return sortedMovies.sort((a, b) => a.Year.localeCompare(b.Year));
+        return  a.Year.localeCompare(b.Year);
       
       if (sortBy === "YEAR--HIGH") 
-        return sortedMovies.sort((a, b) => b.Year.localeCompare(a.Year));
+        return  b.Year.localeCompare(a.Year);
       
       return 0;
  })
@@ -46,9 +46,9 @@ if (sortBy === "LOW_TO_HIGH")
             <div className="user">
               <div className="user-card">
                 <div className="user-card">
-            {searchTerm.map((movie) =>( 
+            {sortedMovies.map((movie) =>( 
              
-              <div class="user-card__container">
+              <div className="user-card__container">
                 <h3>{movie.Title}</h3>
                 <p><b>Year</b> {movie.Year}</p>
                 <p><b>imdbID</b> {movie.imdbID}</p>
