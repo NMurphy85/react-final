@@ -11,34 +11,33 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
  const [searchTerm, setSearchTerm] = useState([]);
  const sortedMovies = [...movies].sort((a, b) => {
-if (sortBy === "LOW_TO_HIGH") {
-        sortedMovies.sort((a, b) => a.Title.localeCompare(b.Title));
-      }
-      if (sortBy === "HIGH_TO_LOW") {
-        sortedMovies.sort((a, b) => b.Title.localeCompare(a.Title));
-      }
-      if (sortBy === "YEAR--LOW") {
-        sortedMovies.sort((a, b) => a.Year.localeCompare(b.Year));
-      }
-      if (sortBy === "YEAR--HIGH") {
-        sortedMovies.sort((a, b) => b.Year.localeCompare(a.Year));
- }
+if (sortBy === "LOW_TO_HIGH")  
+       return sortedMovies.sort((a, b) => a.Title.localeCompare(b.Title));
+      
+      if (sortBy === "HIGH_TO_LOW") 
+        return sortedMovies.sort((a, b) => b.Title.localeCompare(a.Title));
+      
+      if (sortBy === "YEAR--LOW") 
+        return sortedMovies.sort((a, b) => a.Year.localeCompare(b.Year));
+      
+      if (sortBy === "YEAR--HIGH") 
+        return sortedMovies.sort((a, b) => b.Year.localeCompare(a.Year));
+      
+      return 0;
  })
  
  
  useEffect(() => {
-    async function getMovies(searchTerm) {
+    async function getMovies() {
       const {data} = await axios.get(
-        `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
-      );
+        `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`)
       console.log(data);
-      setSearchTerm(data.Search || []);
+  setMovies(data.Search || []);
       
     }
     getMovies();
-  }, []);
-// 
-  // setMovies(data.Search || []);
+  }, [query]);
+
   return (
     <>
       <div className="container">
@@ -46,7 +45,7 @@ if (sortBy === "LOW_TO_HIGH") {
           <div className="user-list">
             <div className="user">
               <div className="user-card">
-                <div class="user-card">
+                <div className="user-card">
             {searchTerm.map((movie) =>( 
              
               <div class="user-card__container">
