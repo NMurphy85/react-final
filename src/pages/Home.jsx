@@ -3,11 +3,10 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 const API_KEY = "1989ac72";
 
-const Home = () => {
-  const [sortBy, setSortBy] = useState("")  
+const Home = ({ query, sortBy }) => {
   
   const { id } = useParams();
-  const [query, setQuery] = useState('super' || []);
+
   const [movies, setMovies] = useState([]);
  const [searchTerm, setSearchTerm] = useState([]);
  const sortedMovies = [...movies].sort((a, b) => {
@@ -40,12 +39,12 @@ if (sortBy === "LOW_TO_HIGH")
 
   return (
     <>
-      <div className="container">
+      <div key={query.id} className="container">
         <div className="row">
           <div className="user-list">
             <div className="user">
               <div className="user-card">
-                <div className="user-card">
+                <div key={query.id} className="user-card">
             {sortedMovies.map((movie) =>( 
              
               <div className="user-card__container">

@@ -18,7 +18,10 @@ const Main = ( { query, setQuery, sortBy, setSortBy } ) => {
       id="searchInput" 
       placeholder="Search movies..." required=""/>
       <button className="search-form__button" 
-      type="submit">Search</button>
+      type="submit" onClick={(e) => {
+        e.preventDefault();
+        setQuery(searchTerm);
+      }}>Search</button>
     </form>
             <div>
           
@@ -41,6 +44,7 @@ const Main = ( { query, setQuery, sortBy, setSortBy } ) => {
    
     </div>
   )
+
 }
 
 export default Main

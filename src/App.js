@@ -12,10 +12,10 @@ function App() {
 <Main  query={query}
  setQuery={setQuery} 
  sortBy={sortBy} 
- setSortBy={setSortBy} />
+ setSortBy={setSortBy} key={query.id} />
 <Home 
 query={query} 
-sortBy={sortBy} />
+sortBy={sortBy} key={query.id} />
 
     </div>
   );
