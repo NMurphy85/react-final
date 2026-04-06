@@ -4,7 +4,7 @@ import Main from './pages/Main';
 import Nav from './pages/Nav';
 import React, { useState } from 'react';
 function App() {
-  const [query, setQuery] = useState( [])
+  const [query, setQuery] = useState( 'super');
   const [sortBy, setSortBy] = useState("")
   return (
     <div className="App">
