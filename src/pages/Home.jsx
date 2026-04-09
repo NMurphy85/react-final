@@ -40,41 +40,45 @@ if (sortBy === "LOW_TO_HIGH")
 
   return (
     <>
-      <div key={query.id} className="container">
+      <div key={query.id} className="container ">
         <div className="row">
-          <div className="user-list">
             <div className="user">
-              <div className="user-card">
+              <div className="user-card user-list">
+                
             
               
             {
-                loading ? (
+              loading ? (
                 
-                  <div key={query.id} className="user-card">
+                <div key={query.id} className="user-card">
                   
                     
               <div className="user-card__container movie__body--skeleton" key={query.id}>
                 <h3 className="movie__body--skeleton"></h3>
                 <p className="movie__body--skeleton"><b>Year</b></p>
                 <p className="movie__body--skeleton"><b>imdbID</b></p>
-                <img  className="movie__body--skeleton"/>
+                <img  className="img-body--skeleton"/>
               </div>
             </div>
               ):(
                 <div key={query.id} className="user-card">
                 {sortedMovies.map((movie) => (
+                 
+
                   <div className="user-card__container" key={movie.imdbID}>
                     <h3>{movie.Title}</h3>
                     <p><b>Year</b> {movie.Year}</p>
                     <p><b>imdbID</b> {movie.imdbID}</p>
-                    <img src={movie.Poster} alt={movie.Title} />
+                    <img className="movie__img" src={movie.Poster} alt={movie.Title} />
+               
                   </div>
+                 
                 ))
                 }
                 </div>
               )
             }
-              </div>
+              
             </div>
           </div>
         </div>

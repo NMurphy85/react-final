@@ -51,6 +51,7 @@ p {
 
 .user-card__container {
   padding: 2px 16px;
+  flex-wrap: wrap;
 }
 
 .post-card {
@@ -136,6 +137,13 @@ select {
   display: flex;
   justify-content: start;
 }
+
+.movie__img {
+  max-height: 320px;
+  max-width: 250px;
+  transition: all 300ms ease;
+}
+
 
 .movies__title {
   text-align: center;
@@ -305,4 +313,10 @@ Skeleton Loading
   width: 100%;
   height: 24px;
   background-color: lightgray;
+}
+
+.img__body--skeleton {
+  width: 100%;
+  height: 300px;
+  background-color: gray;
 }
