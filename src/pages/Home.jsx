@@ -1,11 +1,12 @@
 import React, { use, useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const API_KEY = "1989ac72";
 
 const Home = ({ query, sortBy }) => {
   
   const { id } = useParams();
+  const [card, setCard] = useState([]);
 const [loading, setLoading] = useState();
   const [movies, setMovies] = useState([]);
  const [searchTerm, setSearchTerm] = useState([]);
@@ -42,8 +43,12 @@ if (sortBy === "LOW_TO_HIGH")
     <>
       <div key={query.id} className="container ">
         <div className="row">
-            <div className="user">
-              <div className="user-card user-list">
+              <div className="user-list">
+            <div className="user-card">
+              <div className="user-card__container">
+
+                
+
                 
             
               
@@ -53,7 +58,7 @@ if (sortBy === "LOW_TO_HIGH")
                 <div key={query.id} className="user-card">
                   
                     
-              <div className="user-card__container movie__body--skeleton" key={query.id}>
+              <div className="movie__body--skeleton" key={query.id}>
                 <h3 className="movie__body--skeleton"></h3>
                 <p className="movie__body--skeleton"><b>Year</b></p>
                 <p className="movie__body--skeleton"><b>imdbID</b></p>
@@ -61,16 +66,23 @@ if (sortBy === "LOW_TO_HIGH")
               </div>
             </div>
               ):(
-                <div key={query.id} className="user-card">
+                <div key={query.id}>
                 {sortedMovies.map((movie) => (
                  
 
-                  <div className="user-card__container" key={movie.imdbID}>
+                  <div className="user-card" key={movie.imdbID}>
+                   <div className="user-card__container">
+
+
                     <h3>{movie.Title}</h3>
                     <p><b>Year</b> {movie.Year}</p>
                     <p><b>imdbID</b> {movie.imdbID}</p>
-                    <img className="movie__img" src={movie.Poster} alt={movie.Title} />
+                   
+                    <img className="movie__img" src={movie.Poster} />
+                   
                
+               
+                   </div>
                   </div>
                  
                 ))
@@ -83,6 +95,9 @@ if (sortBy === "LOW_TO_HIGH")
           </div>
         </div>
       </div>
+              </div>
+                
+
     </>
   );}
 export default Home
