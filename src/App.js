@@ -1,4 +1,5 @@
 import './App.css';
+import MovieData from './pages/MovieData';
 import Home from './pages/Home';
 import Main from './pages/Main';
 import Nav from './pages/Nav';
@@ -9,12 +10,12 @@ function App() {
   const [sortBy, setSortBy] = useState("")
   return (
     <div className="App">
-<Nav />
+        <Nav />
       <Router>
         <Routes>
-          <Route path="/" element={<Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} />
+          <Route path="/"  exact element={<Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} />
           <Route path="/home" element={<Home query={query} sortBy={sortBy} />} />
-          <Route path="/home/:id" element={< movieData query={query} sortBy={sortBy} />} />
+          <Route path={`/:id`} element={<MovieData />} />
         
         </Routes>
       </Router>
