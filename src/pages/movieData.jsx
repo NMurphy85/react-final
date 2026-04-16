@@ -1,8 +1,9 @@
 import React from 'react'
 import Nav from './Nav';
 import { Link } from 'react-router-dom';
-
+import { useParams } from 'react-router-dom';
 const MovieData = (movie) => {
+  const { id } = useParams();
   return (
     <>
     

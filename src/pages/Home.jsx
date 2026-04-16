@@ -31,7 +31,7 @@ if (sortBy === "LOW_TO_HIGH")
     async function getMovies() {
       setLoading(true);
       const {data} = await axios.get(
-        `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`)
+        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`)
       console.log(data);
       setMovies(data.Search || []);
       setLoading(false);
@@ -44,6 +44,7 @@ if (sortBy === "LOW_TO_HIGH")
       <div key={query.id} className="container ">
         <div className="row">
               <div className="user-list">
+                
             <div className="user-card">
               <div className="user-card__container">
 
@@ -69,6 +70,7 @@ if (sortBy === "LOW_TO_HIGH")
                 <div key={query.id}>
                 {sortedMovies.map((movie) => (
                  
+                    <Link to='/id'>
 
                   <div className="user-card" key={movie.imdbID}>
                    <div className="user-card__container">
@@ -84,6 +86,7 @@ if (sortBy === "LOW_TO_HIGH")
                
                    </div>
                   </div>
+                    </Link>
                  
                 ))
                 }

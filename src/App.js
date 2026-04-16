@@ -20,9 +20,7 @@ function App() {
         </Routes>
       </Router>
 
-<Home 
-query={query} 
-sortBy={sortBy} key={query.id} />
+
 
     </div>
   );
