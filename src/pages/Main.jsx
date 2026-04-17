@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 
 const Main = ({ query, setQuery, sortBy, setSortBy }) => {
-  const [searchTerm, setSearchTerm] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(query);
   return (
     <div>
       <div className="container">
-        <form className="search-form" id="searchForm">
+        <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          setQuery(searchTerm);
+        }
+
+        }
+         className="search-form" id="searchForm">
           <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="search-form__input"
             type="text"
             id="searchInput"

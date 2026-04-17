@@ -10,11 +10,18 @@ function App() {
   const [sortBy, setSortBy] = useState("")
   return (
     <div className="App">
-        <Nav />
       <Router>
+        <Nav />
         <Routes>
-          <Route path="/"  exact element={<Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} />
-          <Route path="/home" element={<Home query={query} sortBy={sortBy} />} />
+          <Route path="/" element={
+            <>
+            <Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} 
+            />
+            <Home query={query} sortBy={sortBy}
+            />
+            </>
+          }/>
+          <Route path="/home" element={<Home query={query} setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} />
           <Route path={`/:id`} element={<MovieData />} />
         
         </Routes>

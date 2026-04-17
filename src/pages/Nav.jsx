@@ -1,20 +1,28 @@
-import React from 'react'
-import '../App.css'
-const nav = () => {
+import React from "react";
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+const Nav = () => {
   return (
     <div>
-       <nav>
+      <nav>
         <div className="nav__list">
-          <figure className="movie__logo--wrapper">
-          </figure>
-          <a href="#" className="nav__link">Home</a>
-          <a className="nav__link no-cursor">About</a>
-          <a href="#Movies" className="nav__link">Movies</a>
-          <a className="nav__link no-cursor">Contact</a>
+          <figure className="movie__logo--wrapper"></figure>
+          <Link to="/" className="nav__link">
+            Home
+          </Link>
+          <Link to="/about" className="nav__link">
+            About
+          </Link>
+          <Link to="/movies" className="nav__link">
+            Movies
+          </Link>
+          <Link to="/contact" className="nav__link">
+            Contact
+          </Link>
         </div>
-      
       </nav>
     </div>
-  )
-}
-export default nav
+  );
+};
+export default Nav;
