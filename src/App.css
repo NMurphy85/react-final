@@ -14,6 +14,9 @@ body {
   padding: 20px;
 }
 
+.row {
+  display: flex;
+}
 img {
   width: 100%;
 }
@@ -29,8 +32,6 @@ p {
 .user-list {
   width: auto;
 
-   display: flex;
-  flex-wrap: wrap;
 }
 
 .user {
@@ -47,6 +48,9 @@ p {
   transition: 0.3s;
   cursor: pointer;
   border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  
 
  
  
@@ -153,6 +157,7 @@ select {
   max-height: 320px;
   max-width: 250px;
   transition: all 300ms ease;
+  
 }
 
 
