@@ -37,25 +37,30 @@ const MovieData = () => {
         </figure>
       </Link>
       {movie ? (
-        <div className="user-card__container" key={movie.imdbID}>
+        <div className="user-list">
+
+        <div className="user-card" key={movie.imdbID}>
           <h3>{movie.Title}</h3>
           <p> {movie.Year}</p>
           <p> {movie.imdbID}</p>
           <img className="movie__img" src={movie.Poster} alt='' onLoad={imageLoaded}/>
-          <p> {movie.Plot}</p>
+          <p className="bold"> Plot:</p>
+          <p className="bold"> {movie.Plot}</p>
+        </div>
         </div>
       ):(
+        <div className="movie-body">
         <div className="movie__body--skeleton" key={id}>
           <h3 className="movie__title--skeleton"></h3>
           <p className="movie__title--skeleton">
-            <b>Year</b>
+           
           </p>
           <p className="movie__title--skeleton">
-            <b>imdbID</b>
+           
           </p>
-          <img className="img-body--skeleton" alt="" />
+          <img className="img__body--skeleton" alt="" />
         </div>
-
+         </div>
       )}
     </>
   );
