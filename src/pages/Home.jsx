@@ -39,19 +39,24 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
       <div key={sortBy.id} className="container ">
         <div className="row">
           <div className="user-list">
-            <div className="user-card">
-              <div className="user-card__container">
+            
                 {loading ? (
                  <div className="user-list">
                  {[...Array(10)].map((_, index) => (
+                  <>
                   <div className="user-card"key={index}>
-                    <div className="movie__body--skeleton" >
+                    
+                    <div className="movie__body--skeleton" ></div>
+
+                    </div>
                       <h3 className="movie__title--skeleton"></h3>
                       <p className="movie__title--skeleton"></p>
                       <p className="movie__title--skeleton"></p>
-                      </div>
+                      <div className="user-card">
+
                       <img className="img__body--skeleton" alt="" />
                       </div>
+                   </>
                       
                  ))}
                  </div>
@@ -62,7 +67,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
                   {sortedMovies.map((movie) => (
                     <Link to={`/${movie.imdbID}`} key={movie.imdbID}>
                         
-                          {/* <div className="user-card__container"> */}
+                          
                             <h3>{movie.Title}</h3>
                             <p>
                               <b>Year</b> {movie.Year}
@@ -72,14 +77,14 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
                             </p>
 
                             <img className="movie__img" src={movie.Poster} alt='' />
-                          {/* </div> */}
+                        
                         
                       </Link>
                 ))}
                   </div>
                 )}
-              </div>
-            </div>
+              
+            
           </div>
         </div>
       </div>

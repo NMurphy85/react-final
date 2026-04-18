@@ -49,8 +49,8 @@ const MovieData = () => {
         </div>
         </div>
       ):(
-        <div className="user-list">
-        <div className=" user-card movie__body--skeleton" key={id}>
+        <div className="user-card">
+        <div className="movie__body--skeleton" key={id}>
           <h3 className="movie__title--skeleton"></h3>
           <p className="movie__title--skeleton">
            
@@ -60,7 +60,7 @@ const MovieData = () => {
           </p>
           <img className="img__body--skeleton" alt="" />
         </div>
-      </div>
+        </div>
       )}
     </>
   );
