@@ -48,13 +48,13 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
                     
                     <div className="movie__body--skeleton" ></div>
 
-                    </div>
                       <h3 className="movie__title--skeleton"></h3>
                       <p className="movie__title--skeleton"></p>
                       <p className="movie__title--skeleton"></p>
                       <div className="user-card">
 
                       <img className="img__body--skeleton" alt="" />
+                    </div>
                       </div>
                    </>
                       
@@ -63,9 +63,9 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
                 
                   
                 ) : (
-                  <div>
+                  <>
                   {sortedMovies.map((movie) => (
-                    <Link to={`/${movie.imdbID}`} key={movie.imdbID}>
+                    <Link className="user-card" to={`/${movie.imdbID}`} key={movie.imdbID}>
                         
                           
                             <h3>{movie.Title}</h3>
@@ -81,7 +81,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
                         
                       </Link>
                 ))}
-                  </div>
+                  </>
                 )}
               
             
