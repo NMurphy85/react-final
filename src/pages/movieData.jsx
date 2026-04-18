@@ -20,15 +20,17 @@ const MovieData = () => {
     }
     getMovie();
   }, [id]);
-
+useEffect(() => {
   async function getMoviePlot() {
     const { data } = await axios.get(
-      `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot`,
+      `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`,
     );
-
-    setPlot();
+    console.log(data);
+    setPlot(data.Plot);
   }
+
   getMoviePlot();
+}, [plot])
   return (
     <>
       <Link to="/">

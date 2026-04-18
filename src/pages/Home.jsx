@@ -41,25 +41,32 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
           <div className="user-list">
             
                 {loading ? (
-                 <div className="user-list">
-                 {[...Array(10)].map((_, index) => (
                   <>
-                  <div className="user-card"key={index}>
-                    
-                    <div className="movie__body--skeleton" ></div>
-
-                      <h3 className="movie__title--skeleton"></h3>
-                      <p className="movie__title--skeleton"></p>
-                      <p className="movie__title--skeleton"></p>
-                      <div className="user-card">
-
-                      <img className="img__body--skeleton" alt="" />
+                  {[...Array(10)].map((_, index) => (
+                    <>
+                    <div className="user-card" key={index}>
+                      <div className="movie__body--skeleton"></div>
                     </div>
+                    <div className="user-card">
+                    <h3 className="movie__title--skeleton"></h3>
+                    </div>
+                    <div className="user-card">
+                    <p className="movie__title--skeleton"></p>
                       </div>
-                   </>
+                      <div className="user-card">
+                    <p className="movie__title--skeleton"></p>
+                      </div>
+                    <div className="user-card">
+                        <img className="img__body--skeleton" alt="" />
+                    </div>
+
+                      
+                      </>
+                      
+                   
                       
                  ))}
-                 </div>
+                </>
                 
                   
                 ) : (
