@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 const API_KEY = "1989ac72";
@@ -36,7 +36,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
 
   return (
     <>
-      <div key={query.id} className="container ">
+      <div key={sortBy.id} className="container ">
         <div className="row">
           <div className="user-list">
             <div className="user-card">
@@ -51,15 +51,15 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
                       <p className="movie__body--skeleton">
                         <b>imdbID</b>
                       </p>
-                      <img className="img-body--skeleton" />
+                      <img className="img-body--skeleton" alt="" />
                     </div>
                   </div>
                 ) : (
-                  <div key={query.id}>
-                    {sortedMovies.map((movie) => (
-                      <Link to={`/${movie.imdbID}`}>
-                        <div className="user-card" key={movie.imdbID}>
+                  <div>
+                  {sortedMovies.map((movie) => (
+                    <Link to={`/${movie.imdbID}`} key={movie.imdbID}>
                           <div className="user-card__container">
+                        <div className="user-card">
                             <h3>{movie.Title}</h3>
                             <p>
                               <b>Year</b> {movie.Year}
@@ -68,11 +68,11 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
                               <b>imdbID</b> {movie.imdbID}
                             </p>
 
-                            <img className="movie__img" src={movie.Poster} />
+                            <img className="movie__img" src={movie.Poster} alt='' />
                           </div>
                         </div>
                       </Link>
-                    ))}
+                ))}
                   </div>
                 )}
               </div>

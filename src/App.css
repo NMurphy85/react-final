@@ -7,15 +7,18 @@ body {
 
 .container {
   margin: 0 auto;
- 
 
   width: 100%;
 
   padding: 20px;
 }
 
+
 .row {
-  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 img {
   width: 100%;
@@ -25,21 +28,32 @@ p {
   word-break: break-word;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .hidden {
   display: none;
+}
+.bold{
+  font-weight: bold;
 }
 
 .user-list {
   width: auto;
-
 }
 
 .user {
- 
   width: 50%;
 }
 
-
+.padding-left{
+margin-right: 4px;
+}
+.user-card__container {
+  gap: 20px;
+  padding: 20px;
+}
 
 .user-card {
   background-color: #fff;
@@ -48,25 +62,14 @@ p {
   transition: 0.3s;
   cursor: pointer;
   border-radius: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  
+  flex: 0 0 calc(25% - 20px);
+  padding: 10px;
 
- 
- 
-
+  text-align: center;
 }
 
 .user-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.user-card__container {
-  padding: 2px 16px;
-
-
-
-  
 }
 
 .post-card {
@@ -157,9 +160,7 @@ select {
   max-height: 320px;
   max-width: 250px;
   transition: all 300ms ease;
-  
 }
-
 
 .movies__title {
   text-align: center;
@@ -266,7 +267,6 @@ footer {
   .footer__link {
     padding: 8px 0;
   }
-
 }
 
 @media (max-width: 1024px) {
@@ -304,11 +304,12 @@ search bar
   justify-content: flex-start;
   margin-left: 32px;
 }
-.filter, .filter--bold {
- font-weight: bold;
+.filter,
+.filter--bold {
+  font-weight: bold;
 }
 
-.filter:hover{
+.filter:hover {
   opacity: 1;
   color: #000;
 }
@@ -320,19 +321,21 @@ Skeleton Loading
 */
 
 .movie__title--skeleton {
-  width: 80px;
-  height: 12px;
-  background-color: lightgray;
+  width: 100%;
+  height: 21px;
+  background-color: gray;
 }
 
 .movie__body--skeleton {
   width: 100%;
   height: 24px;
-  background-color: lightgray;
+  background-color: gray;
 }
 
 .img__body--skeleton {
   width: 100%;
-  height: 300px;
-  background-color: gray;
+  max-width: 250px;
+  height: 320px;
+  background-color: rgb(204, 204, 204);
+  margin-bottom: 8px;
 }
