@@ -42,18 +42,14 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
             <div className="user-card">
               <div className="user-card__container">
                 {loading ? (
-                  <div key={query.id} className="user-card">
-                    <div className="movie__body--skeleton" key={query.id}>
-                      <h3 className="movie__body--skeleton"></h3>
-                      <p className="movie__body--skeleton">
-                        <b>Year</b>
-                      </p>
-                      <p className="movie__body--skeleton">
-                        <b>imdbID</b>
-                      </p>
+                 <>
+                    <div className="movie__body--skeleton" key={query.id}></div>
+                      <h3 className="movie__title--skeleton"></h3>
+                      <p className="movie__title--skeleton"><b>Year</b></p>
+                      <p className="movie__title--skeleton"><b>imdbID</b></p>
                       <img className="img-body--skeleton" alt="" />
-                    </div>
-                  </div>
+                 </>
+                  
                 ) : (
                   <div>
                   {sortedMovies.map((movie) => (

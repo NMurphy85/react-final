@@ -8,6 +8,9 @@ const MovieData = () => {
   const [movie, setMovie] = useState(null);
   const [plot, setPlot] = useState(null);
   const { id } = useParams();
+  function imageLoaded() {
+    console.log("Image loaded");
+  }
   useEffect(() => {
     async function getMovie() {
       const { data } = await axios.get(
@@ -33,14 +36,26 @@ const MovieData = () => {
           <FontAwesomeIcon icon="arrow-left" className="padding-left" /> Home
         </figure>
       </Link>
-      {movie && (
+      {movie ? (
         <div className="user-card__container" key={movie.imdbID}>
           <h3>{movie.Title}</h3>
           <p> {movie.Year}</p>
           <p> {movie.imdbID}</p>
-          <img className="movie__img" src={movie.Poster} />
+          <img className="movie__img" src={movie.Poster} alt='' onLoad={imageLoaded}/>
           <p> {movie.Plot}</p>
         </div>
+      ):(
+        <div className="movie__body--skeleton" key={id}>
+          <h3 className="movie__title--skeleton"></h3>
+          <p className="movie__title--skeleton">
+            <b>Year</b>
+          </p>
+          <p className="movie__title--skeleton">
+            <b>imdbID</b>
+          </p>
+          <img className="img-body--skeleton" alt="" />
+        </div>
+
       )}
     </>
   );
