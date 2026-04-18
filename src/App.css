@@ -336,16 +336,14 @@ Skeleton Loading
 
 */
 
-.movie-body{
-  display: flex;
-  justify-content: center;
-   
-}
+
 
 .movie__title--skeleton {
   width: 100%;
   height: 21px;
-  background-color: #c0c0c0
+  background-color: #c0c0c0;
+  margin-bottom: 8px;
+  border-radius: 4px;
 }
 
 
@@ -353,6 +351,7 @@ Skeleton Loading
   max-height: 320px;
   max-width: 250px;
   background-color: #c0c0c0;
+  padding: 8px;
 
 }
 
@@ -365,6 +364,3 @@ Skeleton Loading
  
 }
 
-.img__body--skeleton img{
-
-}
