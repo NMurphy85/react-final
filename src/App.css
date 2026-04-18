@@ -345,29 +345,26 @@ Skeleton Loading
 .movie__title--skeleton {
   width: 100%;
   height: 21px;
-   opacity: 0;
+  background-color: #c0c0c0
 }
-.movie__title--skeleton p {
 
-   opacity: 0;
-}
 
 .movie__body--skeleton {
   max-height: 320px;
   max-width: 250px;
-  background-color: gray;
-   opacity: 0;
+  background-color: #c0c0c0;
+
 }
 
 .img__body--skeleton {
   width: 100%;
   max-width: 250px;
   height: 320px;
-  background-color: gray;
+  background-color: #c0c0c0;
   margin-bottom: 8px;
  
 }
 
 .img__body--skeleton img{
-  opacity: 0;
+
 }

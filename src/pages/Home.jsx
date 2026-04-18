@@ -42,14 +42,19 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
             <div className="user-card">
               <div className="user-card__container">
                 {loading ? (
-                 <>
-                    <div className="movie__body--skeleton" key={query.id}>
+                 
+                 [...Array(10)].map((_, index) => (
+                  
+                    <div className="movie__body--skeleton" key={index}>
                       <h3 className="movie__title--skeleton"></h3>
                       <p className="movie__title--skeleton"></p>
                       <p className="movie__title--skeleton"></p>
-                      </div>
                       <img className="img__body--skeleton" alt="" />
-                 </>
+                      </div>
+                      
+                 ))
+
+                
                   
                 ) : (
                   <div>
