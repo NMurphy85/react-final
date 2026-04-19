@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 const API_KEY = "1989ac72";
@@ -39,59 +39,43 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
       <div key={sortBy.id} className="container ">
         <div className="row">
           <div className="user-list">
-            
-                {loading ? (
-                  <>
-                  {[...Array(10)].map((_, index) => (
-                    <>
-                    <div className="user-card" key={index}>
-                      <div className="movie__body--skeleton"></div>
-                    </div>
-                    <div className="user-card">
+            {loading ? (
+              <>
+                {[...Array(10)].map((_, index) => (
+                  <div className="user-card" key={index}>
+                    <div className="movie__body--skeleton"></div>
+
                     <h3 className="movie__title--skeleton"></h3>
-                    </div>
-                    <div className="user-card">
-                    <p className="movie__title--skeleton"></p>
-                      </div>
-                      <div className="user-card">
-                    <p className="movie__title--skeleton"></p>
-                      </div>
-                    <div className="user-card">
-                        <img className="img__body--skeleton" alt="" />
-                    </div>
 
-                      
-                      </>
-                      
-                   
-                      
-                 ))}
-                </>
-                
-                  
-                ) : (
-                  <>
-                  {sortedMovies.map((movie) => (
-                    <Link className="user-card" to={`/${movie.imdbID}`} key={movie.imdbID}>
-                        
-                          
-                            <h3>{movie.Title}</h3>
-                            <p>
-                              <b>Year</b> {movie.Year}
-                            </p>
-                            <p>
-                              <b>imdbID</b> {movie.imdbID}
-                            </p>
+                    <p className="movie__title--skeleton"></p>
 
-                            <img className="movie__img" src={movie.Poster} alt='' />
-                        
-                        
-                      </Link>
+                    <p className="movie__title--skeleton"></p>
+
+                    <img className="img__body--skeleton" alt="" />
+                  </div>
                 ))}
-                  </>
-                )}
-              
-            
+              </>
+            ) : (
+              <>
+                {sortedMovies.map((movie) => (
+                  <div className="user-card">
+
+                  <Link to={`/${movie.imdbID}`} key={movie.imdbID}>
+                    <h3>{movie.Title}</h3>
+                    <p>
+                      <b>Year</b> {movie.Year}
+                    </p>
+                    <p>
+                      <b>imdbID</b> {movie.imdbID}
+                    </p>
+
+                    <img className="movie__img" src={movie.Poster} alt="" />
+                  </Link>
+                  </div>
+                ))}
+
+              </>
+            )}
           </div>
         </div>
       </div>
