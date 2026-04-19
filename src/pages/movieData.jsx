@@ -6,23 +6,12 @@ import { useParams } from "react-router-dom";
 const API_KEY = "1989ac72";
 const MovieData = () => {
   const [movie, setMovie] = useState(null);
-  // const [plot, setPlot] = useState(null);
   const { id } = useParams();
-  // function imageLoaded() {
-  //   console.log("Image loaded");
-  // }
-  // useEffect(() => {
-  //   async function getMovie() {
-  //     const { data } = await axios.get(
-  //       `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`,
-  //     );
-  //     setMovie(data);
-  //   }
-  //   getMovie();
-  // }, [id]);
+ 
 useEffect(() => {
   async function getMoviePlot() {
     const { data } = await axios.get(
+      // This api fetches both the single movie data, and the plot in one fetch
       `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`,
     );
     console.log(data);
@@ -50,6 +39,7 @@ useEffect(() => {
           <p className="bold"> {movie.Plot}</p>
         </div>
       </div>
+      // The structure of both of these conditional statements must match for the loading state to work! //
       ):(
         <div className="user-list">
         <div className="user-card">

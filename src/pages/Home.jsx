@@ -39,42 +39,30 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
       <div key={sortBy.id} className="container ">
         <div className="row">
           <div className="user-list">
-            {loading ? (
-              
-                [...Array(10)].map((_, index) => (
+            {loading
+              ? [...Array(10)].map((_, index) => (
                   <div className="user-card" key={index}>
-
                     <h3 className="movie__title--skeleton"></h3>
-
                     <p className="movie__title--skeleton"></p>
-
                     <p className="movie__title--skeleton"></p>
-
                     <div className="img__body--skeleton"></div>
                   </div>
-                ))
-              
-            ) : (
-              
-                sortedMovies.map((movie) => (
-                  <div className="user-card"key={movie.imdbID}>
+                )):
+                 sortedMovies.map((movie) => (
+                  <div className="user-card" key={movie.imdbID}>
+                    <Link to={`/${movie.imdbID}`}>
+                      <h3>{movie.Title}</h3>
+                      <p>
+                        <b>Year</b> {movie.Year}
+                      </p>
+                      <p>
+                        <b>imdbID</b> {movie.imdbID}
+                      </p>
 
-                  <Link to={`/${movie.imdbID}`} >
-                    <h3>{movie.Title}</h3>
-                    <p>
-                      <b>Year</b> {movie.Year}
-                    </p>
-                    <p>
-                      <b>imdbID</b> {movie.imdbID}
-                    </p>
-
-                    <img className="movie__img" src={movie.Poster} alt="" />
-                  </Link>
+                      <img className="movie__img" src={movie.Poster} alt="" />
+                    </Link>
                   </div>
-                ))
-
-              
-            )}
+                ))}
           </div>
         </div>
       </div>
