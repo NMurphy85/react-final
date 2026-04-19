@@ -43,7 +43,6 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
               
                 [...Array(10)].map((_, index) => (
                   <div className="user-card" key={index}>
-                    <div className="movie__body--skeleton"></div>
 
                     <h3 className="movie__title--skeleton"></h3>
 
