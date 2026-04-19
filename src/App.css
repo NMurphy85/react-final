@@ -6,14 +6,12 @@ body {
 }
 
 .container {
-  
   margin: 0 auto;
 
   width: 100%;
 
   padding: 20px;
 }
-
 
 .row {
   width: 100%;
@@ -36,14 +34,12 @@ a {
 .hidden {
   display: none;
 }
-.bold{
+.bold {
   font-weight: bold;
 }
 
-
-
-.padding-left{
-margin-right: 4px;
+.padding-left {
+  margin-right: 4px;
 }
 
 /*
@@ -52,13 +48,11 @@ User Card
 
 */
 
-
 .user-list {
   width: auto;
   display: flex;
-justify-content: center;
-flex-wrap: wrap;
-
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .user {
@@ -66,9 +60,8 @@ flex-wrap: wrap;
 }
 
 .user-card__container {
-background-color: #fff;
+  background-color: #fff;
   max-width: 250px;
-  
 }
 .user-card {
   background-color: #fff;
@@ -173,7 +166,7 @@ select {
 }
 
 .movie__img {
-    width: 100%;
+  width: 100%;
   max-height: 320px;
   max-width: 250px;
   transition: all 300ms ease;
@@ -337,8 +330,6 @@ Skeleton Loading
 
 */
 
-
-
 .movie__title--skeleton {
   width: 100%;
   height: 21px;
@@ -347,13 +338,11 @@ Skeleton Loading
   border-radius: 4px;
 }
 
-
 .movie__body--skeleton {
   max-height: 320px;
   max-width: 250px;
   background-color: #c0c0c0;
   padding: 8px;
-
 }
 
 .img__body--skeleton {
@@ -362,6 +351,4 @@ Skeleton Loading
   height: 320px;
   background-color: #c0c0c0;
   margin-bottom: 8px;
- 
 }
-

@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 const API_KEY = "1989ac72";
 const MovieData = () => {
   const [movie, setMovie] = useState(null);
-  const [plot, setPlot] = useState(null);
+  const [plot, setPlot] = useState([]);
   const { id } = useParams();
   function imageLoaded() {
     console.log("Image loaded");
@@ -25,14 +25,14 @@ useEffect(() => {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`,
     );
-    console.log(data);
     setPlot(data);
+    console.log(data);
   }
 
   getMoviePlot();
-}, [plot])
+}, [])
   return (
-    
+    <>
       <Link to="/">
         <figure className="bold">
           <FontAwesomeIcon icon="arrow-left" className="padding-left" /> Home
@@ -49,19 +49,19 @@ useEffect(() => {
           <p className="bold"> Plot:</p>
           <p className="bold"> {movie.Plot}</p>
         </div>
-      
+      </div>
       ):(
+        // <div className="user-list">
         <div className="user-card">
         <div className="movie__body--skeleton" key={id}></div>
           <h3 className="movie__title--skeleton"></h3>
           <p className="movie__title--skeleton"></p>
           <p className="movie__title--skeleton"></p>
           <img className="img__body--skeleton" alt="" />
-        
         </div>
+        // </div>
       )}
-        </div>
-    
+    </>
   );
 };
 
