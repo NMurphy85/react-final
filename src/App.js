@@ -22,10 +22,10 @@ function App() {
             <Home query={query} sortBy={sortBy} key={MovieData.id}
             />
             </>
-          } />
+          }  />
           <Route path={`/:id`} element={<MovieData />}  />
-          {/* <Route path='/home'element={<Home query={query} setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} /> */}
-        <Route path='/'  element={ <Landing />} />
+          {/* <Route path='/home'element={<Landing />}  />  */}
+        <Route path='/' element={<Landing />}  />
         </Routes>
        <Footer />
       </Router>
