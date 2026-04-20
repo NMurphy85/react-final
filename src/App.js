@@ -16,9 +16,11 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/home" element={ <Home query={query} sortBy={sortBy}  />}  />
-          <Route path='/home'  element = {<Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} />
+          <Route path='/home/:id'  element = {<Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} />
 
           <Route path='/'element={<Landing />}  /> 
+          {/* <Route path='/'element={<Main />}  />  */}
+        <Route path={'/:id'} element={<Home />}  />
         <Route path={'/:id'} element={<Landing />}  />
       
         </Routes>
