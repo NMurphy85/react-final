@@ -17,6 +17,7 @@ const Main = ({
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            console.log('submit', searchTerm )
             setQuery(searchTerm);
           }}
           className="search-form"
