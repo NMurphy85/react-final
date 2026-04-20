@@ -8,31 +8,32 @@ const MovieData = () => {
   const [movie, setMovie] = useState(null);
   const { id } = useParams();
  
+
+
+
   useEffect(() => {
-    setMovie(null)
-    if (!id || id ==='undefined')  return
+    setMovie(null);
+    if (!id || id === 'undefined') return;
+
     async function getMoviePlot() {
-      try 
-      {
-      const { data } = await axios.get(
-        // This api fetches both the single movie data, and the plot in one fetch
-        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`,
-      );
-      if (data.Response === 'True'){
-        setMovie(data);
+      try {
+        const { data } = await axios.get(
+          `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`
+        );
 
-      } else {
-        console.error('API Error', data.Error)
+        if (data.Response === 'True') {
+          setMovie(data);
+        } else {
+          console.error('API Error', data.Error);
+        } // This closes the 'else'
+      } catch (err) { // This now correctly follows the 'try' closing brace
+        console.error('Fetch Error:', err);
       }
-       catch (err){
-        console.error('Fetch Error:',err)
-      }
-      
-    
-  }}
-  getMoviePlot();
+    }
 
-}, [id])
+    getMoviePlot();
+  }, [id]);
+
   return (
     
     <>
