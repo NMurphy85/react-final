@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <div>
       <footer>
-      <div class="container">
-        <div class="footer__list">
+      <div className="container">
+        <div className="footer__list">
           <Link to ="/" className="footer__link">Home</Link>
           <Link to ="footer__link no-cursor">About</Link>
           <Link to ="/" className="footer__link">Movies</Link>
