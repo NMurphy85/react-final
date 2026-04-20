@@ -20,7 +20,7 @@ const MovieData = () => {
         const { data } = await axios.get(
           `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`
         );
-       
+        console.log(data)
         if (data.Response === 'True') {
           setMovie(data);
         } else {
@@ -32,7 +32,7 @@ const MovieData = () => {
     }
 
     getMoviePlot();
-  }, [id]);
+  }, []);
 
   return (
     

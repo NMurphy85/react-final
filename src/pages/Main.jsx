@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 const Main = ({ query, setQuery, sortBy, setSortBy }) => {
   const [searchTerm, setSearchTerm] = useState(query);
+ function testButton() {
+  console.log()
+ }
   return (
     <div>
       <div className="container">
@@ -21,7 +24,8 @@ const Main = ({ query, setQuery, sortBy, setSortBy }) => {
             placeholder="Search movies..."
             required=""
           />
-          <button
+          <button 
+           
             className="search-form__button"
             type="submit"
             onClick={(e) => {
@@ -29,9 +33,10 @@ const Main = ({ query, setQuery, sortBy, setSortBy }) => {
             }}
           >
             Search
+           
           </button>
         </form>
-        <div></div>
+      
       </div>
       <div className="filter__wrap">
         <select

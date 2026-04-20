@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 const API_KEY = "1989ac72";
 
-const Home = ({ query, setQuery, sortBy, setSortBy }) => {
+const Home = ({ query, setQuery, sortBy, setSortBy, limit }) => {
   const { id } = useParams();
   const [card, setCard] = useState([]);
   const [loading, setLoading] = useState();
@@ -23,6 +23,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
 
   useEffect(() => {
     async function getMovies() {
+      
       setLoading(true);
       const { data } = await axios.get(
         `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
@@ -32,7 +33,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
       setLoading(false);
     }
     getMovies();
-  }, [query]);
+  }, []);
 
   return (
     <>
@@ -49,7 +50,9 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
                     <div className="img__body--skeleton"></div>
                   </div>
                 ))
-              : sortedMovies.map((movie) => (
+                
+              : sortedMovies.slice(0, limit ||
+                sortedMovies.length).map((movie) => (
                   <div className="user-card" key={movie.imdbID}>
                     <Link to={`/${movie.imdbID}`}>
                       <h3>{movie.Title}</h3>

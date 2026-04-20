@@ -10,22 +10,33 @@ import Landing from './pages/Landing';
 function App() {
   const [query, setQuery] = useState( 'super');
   const [sortBy, setSortBy] = useState("")
+ const [ searchTerm, setSearchTerm] = useState() 
   return (
     <div className="App">
       <Router>
         <Nav />
         <Routes>
-          <Route path="/home" element={ <Home query={query} setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />}  />
-          <Route path="/home" element={ <Main query={query} setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />}  />
-          {/* <Route path='/home'  element = {<Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} /> */}
+          <Route path='/'element={
+            <>
+            <Home query="super" limit={4} />
+           
+            </>
+            
+            }  /> 
+          
+          <Route path="/home" element={ 
+            <>
+<Main query={query} setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy}  searchTerm={searchTerm}  setSearchTerm={setSearchTerm}/>
+<Home query={query} setQuery={setQuery}  sortBy={sortBy} setSortBy={setSortBy} searchTerm={searchTerm}  setSearchTerm={setSearchTerm}/>
+            </>
+          } />
 
-          <Route path='/'element={<Landing query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />}  /> 
           <Route path='/:id'element={<MovieData />}  /> 
-        {/* <Route path={'/:id'} element={<Main />}  /> */}
-        <Route path={'/:id'} element={<Landing />}  />
+
+        
       
         </Routes>
-       <Footer />
+        <Footer />
       </Router>
         
 
