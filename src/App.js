@@ -15,13 +15,13 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route path="/home" element={ <Home query={query} sortBy={sortBy}  />}  />
-          <Route path="/home" element={ <Main query={query} sortBy={sortBy}  />}  />
-          <Route path='/home/:id'  element = {<Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} />
+          <Route path="/home" element={ <Home query={query} setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />}  />
+          <Route path="/home" element={ <Main query={query} setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />}  />
+          {/* <Route path='/home'  element = {<Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />} /> */}
 
           <Route path='/'element={<Landing query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />}  /> 
           <Route path='/:id'element={<MovieData />}  /> 
-        <Route path={'/:id'} element={<Main />}  />
+        {/* <Route path={'/:id'} element={<Main />}  /> */}
         <Route path={'/:id'} element={<Landing />}  />
       
         </Routes>

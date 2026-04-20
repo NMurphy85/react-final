@@ -12,7 +12,7 @@ const MovieData = () => {
 
 
   useEffect(() => {
-    setMovie(null);
+    setMovie(true);
     if (!id || id === 'undefined') return;
 
     async function getMoviePlot() {

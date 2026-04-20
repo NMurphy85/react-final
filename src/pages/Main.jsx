@@ -10,9 +10,8 @@ const Main = ({ query, setQuery, sortBy, setSortBy }) => {
           e.preventDefault();
           setQuery(searchTerm);
         }
-
-        }
-         className="search-form" id="searchForm">
+      }
+      className="search-form" id="searchForm">
           <input
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
