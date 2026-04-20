@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import Footer from "./Footer";
 const API_KEY = "1989ac72";
 
 const Home = ({ query, setQuery, sortBy, setSortBy }) => {
@@ -36,6 +37,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
 
   return (
     <>
+    <section id="home">
       <div key={sortBy.id} className="container">
         <div className="row">
           <div className="user-list">
@@ -62,6 +64,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
           </div>
         </div>
       </div>
+    </section>
     </>
   );
 };

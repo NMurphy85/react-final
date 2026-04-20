@@ -25,7 +25,7 @@ useEffect(() => {
     <>
 
 
-      <Link to="/">
+      <Link to="/home">
         <figure className="bold">
           <FontAwesomeIcon icon="arrow-left" className="padding-left" /> Home
         </figure>
@@ -33,7 +33,7 @@ useEffect(() => {
       {movie ? (
         <div className="user-list">
 
-        <div className="user-card light-rays-container" key={movie.imdbID}>
+        <div className="user-card" key={movie.imdbID}>
           <h3>{movie.Title}</h3>
           <p> {movie.Year}</p>
           <p> {movie.imdbID}</p>
