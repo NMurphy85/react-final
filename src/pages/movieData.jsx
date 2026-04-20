@@ -39,7 +39,7 @@ const MovieData = () => {
     <>
 
 
-      <Link to="/">
+      <Link to="/home">
         <figure className="bold">
           <FontAwesomeIcon icon="arrow-left" className="padding-left" /> Home
         </figure>
@@ -47,7 +47,7 @@ const MovieData = () => {
       {movie ? (
         <div className="user-list">
 
-        <div className="user-card" key={movie.imdbID}>
+        <div className="user-card" >
           <h3>{movie.Title}</h3>
           <p> {movie.Year}</p>
           <p> {movie.imdbID}</p>
@@ -60,7 +60,7 @@ const MovieData = () => {
       ):(
         <div className="user-list">
         <div className="user-card">
-          <h3 className="movie__title--skeleton" key={id}></h3>
+          <h3 className="movie__title--skeleton" ></h3>
           <p className="movie__title--skeleton"></p>
           <p className="movie__title--skeleton"></p>
           <div className="img__body--skeleton" alt="" ></div>
