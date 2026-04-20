@@ -29,7 +29,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
         `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
       );
       console.log(data);
-      setMovies(data.Search || []);
+      setMovies(data.Search);
       setLoading(false);
     }
     getMovies();
@@ -38,7 +38,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
   return (
     <>
     
-      <div key={sortBy.id} className="container">
+      <div key={sortBy} className="container">
         <div className="row">
           <div className="user-list">
             {loading

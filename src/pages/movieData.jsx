@@ -9,16 +9,27 @@ const MovieData = () => {
   const { id } = useParams();
  
   useEffect(() => {
-    if (!id) return
+    setMovie(null)
+    if (!id || id ==='undefined')  return
     async function getMoviePlot() {
+      try 
+      {
       const { data } = await axios.get(
         // This api fetches both the single movie data, and the plot in one fetch
         `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`,
       );
+      if (data.Response === 'True'){
+        setMovie(data);
+
+      } else {
+        console.error('API Error', data.Error)
+      }
+       catch (err){
+        console.error('Fetch Error:',err)
+      }
+      
     
-    console.log(data);
-    setMovie(data);
-  }
+  }}
   getMoviePlot();
 
 }, [id])
@@ -27,7 +38,7 @@ const MovieData = () => {
     <>
 
 
-      <Link to="/home">
+      <Link to="/">
         <figure className="bold">
           <FontAwesomeIcon icon="arrow-left" className="padding-left" /> Home
         </figure>

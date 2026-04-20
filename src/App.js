@@ -24,9 +24,9 @@ function App() {
             </>
           }  />
           
-          {/* <Route path='/home'element={<Landing />}  />  */}
+          <Route path='/'element={<Landing />}  /> 
         <Route path='/:id' element={<Landing />}  />
-        {/* <Route path='/' element=  /> */}
+        {/* <Route path='/' element={<Landing />}  /> */}
         </Routes>
        <Footer />
       </Router>
