@@ -1,39 +1,41 @@
 import React, { useState } from "react";
 
-const Main = ({ query, setQuery, sortBy, setSortBy, searchTerm, setSearchTerm }) => {
- function testButton() {
-  console.log()
- }
+const Main = ({
+  query,
+  setQuery,
+  sortBy,
+  setSortBy,
+  searchTerm,
+  setSearchTerm,
+}) => {
+  function testButton() {
+    console.log();
+  }
   return (
     <div>
       <div className="container">
         <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          setQuery(searchTerm);
-        }
-      }
-      className="search-form" id="searchForm">
+          onSubmit={(e) => {
+            e.preventDefault();
+            setQuery(searchTerm);
+          }}
+          className="search-form"
+          id="searchForm"
+        >
           <input
             value={searchTerm}
-            onSubmit={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="search-form__input"
             type="text"
             id="searchInput"
             placeholder="Search movies..."
             required=""
           />
-          <button 
-           
-            className="search-form__button"
-            type="submit"
-           
-          >
+
+          <button className="search-form__button" type="submit">
             Search
-           console.log("submit" , searchTerm )
           </button>
         </form>
-      
       </div>
       <div className="filter__wrap">
         <select
