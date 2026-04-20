@@ -11,16 +11,16 @@ const Nav = () => {
             <img className="movie--logo" src={Movie} alt="" />
             <img className="movie--logo" src={Movie} alt="" />
           </figure>
-          <Link to="#" className="nav__link">
+          <Link to="/" className="nav__link">
             Home
           </Link>
-          <Link to="/about" className="nav__link">
+          <Link to="/" className="nav__link">
             About
           </Link>
-          <Link to="/" className="nav__link">
+          <Link to="/home" className="nav__link">
             Movies
           </Link>
-          <Link to="/contact" className="nav__link">
+          <Link to="/" className="nav__link">
             Contact
           </Link>
         </div>
