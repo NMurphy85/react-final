@@ -10,7 +10,7 @@ import Landing from './pages/Landing';
 function App() {
   const [query, setQuery] = useState( 'super');
   const [sortBy, setSortBy] = useState("")
- const [ searchTerm, setSearchTerm] = useState() 
+ const [ searchTerm, setSearchTerm] = useState('') 
   return (
     <div className="App">
       <Router>

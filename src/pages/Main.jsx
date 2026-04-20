@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-const Main = ({ query, setQuery, sortBy, setSortBy }) => {
-  const [searchTerm, setSearchTerm] = useState(query);
+const Main = ({ query, setQuery, sortBy, setSortBy, searchTerm, setSearchTerm }) => {
  function testButton() {
   console.log()
  }
@@ -17,7 +16,7 @@ const Main = ({ query, setQuery, sortBy, setSortBy }) => {
       className="search-form" id="searchForm">
           <input
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onSubmit={(e) => setSearchTerm(e.target.value)}
             className="search-form__input"
             type="text"
             id="searchInput"
@@ -28,12 +27,10 @@ const Main = ({ query, setQuery, sortBy, setSortBy }) => {
            
             className="search-form__button"
             type="submit"
-            onClick={(e) => {
-              setQuery(searchTerm);
-            }}
+           
           >
             Search
-           
+           console.log("submit" , searchTerm )
           </button>
         </form>
       
