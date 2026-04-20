@@ -9,6 +9,7 @@ const MovieData = () => {
   const { id } = useParams();
  
   useEffect(() => {
+    if (!id) return
     async function getMoviePlot() {
       const { data } = await axios.get(
         // This api fetches both the single movie data, and the plot in one fetch
