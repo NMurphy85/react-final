@@ -1,11 +1,13 @@
 import React from 'react'
 import MovieData from './MovieData'
-import { useParams } from 'react-router-dom'
 import Home from './Home'
-const Landing = () => {
+import Main from './Main'
+const Landing = (query,setQuery, sortBy, setSortBy) => {
    
     return (
         <div>
+           <Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} />
+           <Home query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy}/>
            <MovieData />
     </div>
   )

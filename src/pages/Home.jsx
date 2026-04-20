@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import Footer from "./Footer";
 const API_KEY = "1989ac72";
 
 const Home = ({ query, setQuery, sortBy, setSortBy }) => {
@@ -29,7 +28,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
         `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
       );
       console.log(data);
-      setMovies(data.Search);
+      setMovies(data.Search || []);
       setLoading(false);
     }
     getMovies();
@@ -38,7 +37,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy }) => {
   return (
     <>
     
-      <div key={sortBy} className="container">
+      <div  className="container">
         <div className="row">
           <div className="user-list">
             {loading
