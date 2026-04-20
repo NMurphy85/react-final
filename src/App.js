@@ -25,7 +25,7 @@ function App() {
           }  />
           
           {/* <Route path='/home'element={<Landing />}  />  */}
-        <Route path={'/:id'} element={<Landing />} element={<MovieData />} />
+        <Route path='/:id' element={<Landing />}  />
         </Routes>
        <Footer />
       </Router>
