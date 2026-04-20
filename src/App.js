@@ -1,12 +1,14 @@
 import './App.css';
 import MovieData from './pages/MovieData';
+import Landing from './pages/Landing';
+import Nav from './pages/Nav';
 import Home from './pages/Home';
 import Main from './pages/Main';
-import Nav from './pages/Nav';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Footer from './pages/Footer';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Footer from './pages/Footer';
-import Landing from './pages/Landing';
 function App() {
   const [query, setQuery] = useState( 'super');
   const [sortBy, setSortBy] = useState("")
@@ -32,7 +34,8 @@ function App() {
           } />
 
           <Route path='/:id'element={<MovieData />}  /> 
-
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
         
       
         </Routes>

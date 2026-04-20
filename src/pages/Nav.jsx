@@ -14,13 +14,13 @@ const Nav = () => {
           <Link to="/" className="nav__link">
             Home
           </Link>
-          <Link to="/" className="nav__link">
+          <Link to="/about" className="nav__link">
             About
           </Link>
           <Link to="/home" className="nav__link">
             Movies
           </Link>
-          <Link to="/" className="nav__link">
+          <Link to="/contact" className="nav__link">
             Contact
           </Link>
         </div>
