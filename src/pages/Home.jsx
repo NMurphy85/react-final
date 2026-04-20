@@ -33,7 +33,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy, limit }) => {
       setLoading(false);
     }
     getMovies();
-  }, []);
+  }, [query]);
 
   return (
     <>

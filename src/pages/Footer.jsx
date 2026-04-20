@@ -10,7 +10,7 @@ const Footer = () => {
           <Link to ="/" className="footer__link">Landing</Link>
           <Link to ="footer__link no-cursor">About</Link>
           <Link to ="/home" className="footer__link">Movies</Link>
-          <Link to ="footer__link no-cursor">Contact</Link>
+          <Link to ='/contact' className = 'footer__link no-cursor'>Contact</Link>
         </div>
         <div className="footer__copyright">Copyright &copy; 2026 Movie Club LLC.</div>
       </div>
