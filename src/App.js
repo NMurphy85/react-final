@@ -17,9 +17,9 @@ function App() {
         <Routes>
           <Route path="/home" element={
             <>
-            <Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} key={MovieData.id}
+            <Main query={query}  setQuery={setQuery} sortBy={sortBy} setSortBy={setSortBy} 
             />
-            <Home query={query} sortBy={sortBy} key={MovieData.id}
+            <Home query={query} sortBy={sortBy} 
             />
             </>
           }  />

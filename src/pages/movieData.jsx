@@ -8,12 +8,13 @@ const MovieData = () => {
   const [movie, setMovie] = useState(null);
   const { id } = useParams();
  
-useEffect(() => {
-  async function getMoviePlot() {
-    const { data } = await axios.get(
-      // This api fetches both the single movie data, and the plot in one fetch
-      `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`,
-    );
+  useEffect(() => {
+    async function getMoviePlot() {
+      const { data } = await axios.get(
+        // This api fetches both the single movie data, and the plot in one fetch
+        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`,
+      );
+      console.log(id);
     console.log(data);
     setMovie(data);
   }
