@@ -41,16 +41,16 @@ const MovieData = () => {
 
       <Link to="/home">
         <figure className="bold">
-          <FontAwesomeIcon icon="arrow-left" className="padding-left" /> Home
+          <FontAwesomeIcon icon="arrow-left" className="padding-left" /> Movies
         </figure>
       </Link>
       {movie ? (
         <div className="user-list">
 
         <div className="user-card" >
-          <h3>{movie.Title}</h3>
-          <p> {movie.Year}</p>
-          <p> {movie.imdbID}</p>
+          <h3 className='bold'> {movie.Title}</h3>
+          <p className='bold'> {movie.Year}</p>
+          <p className='bold'> {movie.imdbID}</p>
           <img className="movie__img" src={movie.Poster} alt='' />
           <p className="bold"> Plot:</p>
           <p className="bold"> {movie.Plot}</p>

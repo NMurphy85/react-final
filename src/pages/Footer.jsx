@@ -17,7 +17,7 @@ const Footer = () => {
             <Link to="/home" className="footer__link">
               Movies
             </Link>
-            <Link to="/home" className="footer__link">
+            <Link to="/contact" className="footer__link">
               Contact
             </Link>
           </div>

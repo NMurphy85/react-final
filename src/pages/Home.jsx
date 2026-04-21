@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Landing from "./Landing";
 import { Link, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const API_KEY = "1989ac72";
 
 const Home = ({ query, setQuery, sortBy, setSortBy, limit }) => {
@@ -37,9 +39,10 @@ const Home = ({ query, setQuery, sortBy, setSortBy, limit }) => {
 
   return (
     <>
-    
+       
       <div  className="container">
         <div className="row">
+          
           <div className="user-list">
             {loading
               ? [...Array(10)].map((_, index) => (
@@ -63,9 +66,10 @@ const Home = ({ query, setQuery, sortBy, setSortBy, limit }) => {
                     </Link>
                   </div>
                 ))}
+                    
           </div>
-        </div>
-      </div>
+      </div> 
+                </div>
     
     </>
   );

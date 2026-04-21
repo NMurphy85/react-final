@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Main = ({
   query,
@@ -14,6 +16,12 @@ const Main = ({
   return (
     <div>
       <div className="container">
+         <Link to="/">
+        <figure className="bold">
+          <FontAwesomeIcon icon="arrow-left" className="padding-left" /> Movies
+        </figure>
+      </Link>
+    
         <form
           onSubmit={(e) => {
             e.preventDefault();

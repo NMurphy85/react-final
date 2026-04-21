@@ -20,8 +20,9 @@ function App() {
         <Routes>
           <Route path='/'element={
             <>
+            <Landing />
             <Home query="super" limit={4} />
-           
+            
             </>
             
             }  /> 
