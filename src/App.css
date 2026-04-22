@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+
+  background-size: cover;
   box-sizing: border-box;
   background: #152331; /* fallback for old browsers */
   background: #000046; /* fallback for old browsers */
@@ -18,13 +20,14 @@ body {
 
 .container {
   margin: 0 auto;
-
-  width: 100%;
-
-  padding: 20px;
+  width: 80%;
+  padding: 0;
 }
-html {
+html,
+body {
   scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
 }
 p {
   transition: all 300ms ease;
@@ -534,7 +537,7 @@ Media queries
     margin-bottom: 104px;
     width: 90%;
   }
-  .landing__header--main{
+  .landing__header--main {
     font-size: 40px;
     width: 90%;
   }
@@ -635,7 +638,3 @@ Media queries
     width: 50%;
   }
 }
-
-
-
-
