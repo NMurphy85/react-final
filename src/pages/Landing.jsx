@@ -9,13 +9,11 @@ const Landing = (query,setQuery, sortBy, setSortBy) => {
         
       <div className="container">
         <div className="row">
-        <h3 className="landing__header "> The Internets 
+        <h3 className="landing__header--top "> The Internets 
           <span className="landing-header-font"> Best </span>  
           Movie <span className="landing-header-font">
             DataBase</span> </h3>
-            <div className="container">
-              <div className="row">
-            <h3 className="landing__header">Why<span className="landing-header-font">Movie Club?</span> </h3>
+            <h3 className="landing__header--main">Why<span className="landing-header-font">Movie Club?</span> </h3>
             <div className="landing__highlights">
               <div className="highlight">
                 <div className="highlight__img">
@@ -50,11 +48,12 @@ const Landing = (query,setQuery, sortBy, setSortBy) => {
                     Detailed Plot information to help you decide your next favorite!
                   </p>
               </div>
-              <h3 className="landing__header">Check it out! Click one of these <span className="landing-header-font">Super</span>  Movies below to get started!</h3>
+              <h3 className="landing__header">Check it out! Click one of these 
+                <span className="landing-header-font">Super</span>  Movies below to get started!</h3>
          
               </div>
-            </div>
-            </div>
+           
+           
             </div>
 
 
