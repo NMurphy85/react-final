@@ -546,7 +546,7 @@ Media queries
     display: flex;
 
     padding: 0 24px;
-    width: 90%;
+    width: 100%;
   }
   .nav__list {
     flex-direction: column;
