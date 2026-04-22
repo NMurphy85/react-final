@@ -32,7 +32,7 @@ const MovieData = () => {
     }
 
     getMoviePlot();
-  }, []);
+  }, [id]);
 
   return (
     
@@ -60,7 +60,7 @@ const MovieData = () => {
       ):(
         <div className="user-list">
         <div className="user-card">
-          <h3 className="movie__title--skeleton" ></h3>
+          <h3 className="movie__title--skeleton" >movie title</h3>
           <p className="movie__title--skeleton"></p>
           <p className="movie__title--skeleton"></p>
           <div className="img__body--skeleton" alt="" ></div>

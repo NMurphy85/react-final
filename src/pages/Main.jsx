@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React  from "react";
 import { Link } from "react-router-dom";
 
 const Main = ({
@@ -10,9 +10,7 @@ const Main = ({
   searchTerm,
   setSearchTerm,
 }) => {
-  function testButton() {
-    console.log();
-  }
+  
   return (
     <div>
       <div className="container">

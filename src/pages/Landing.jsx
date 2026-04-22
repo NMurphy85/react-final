@@ -1,7 +1,4 @@
 import React from 'react'
-import MovieData from './MovieData'
-import { Link } from 'react-router-dom'
-import Home from './Home'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Landing = (query,setQuery, sortBy, setSortBy) => {
    

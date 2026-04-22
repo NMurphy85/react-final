@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Landing from "./Landing";
-import { Link, useParams } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 const API_KEY = "1989ac72";
 
 const Home = ({ query, setQuery, sortBy, setSortBy, limit }) => {
-  const { id } = useParams();
-  const [card, setCard] = useState([]);
   const [loading, setLoading] = useState();
   const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState([]);
   const sortedMovies = [...movies].sort((a, b) => {
     if (sortBy === "LOW_TO_HIGH") return a.Title.localeCompare(b.Title);
 
@@ -47,7 +42,7 @@ const Home = ({ query, setQuery, sortBy, setSortBy, limit }) => {
             {loading
               ? [...Array(10)].map((_, index) => (
                   <div className="user-card" key={index}>
-                    <h3 className="movie__title--skeleton"></h3>
+                    <h3 className="movie__title--skeleton">movie title</h3>
                     <p className="movie__title--skeleton"></p>
                     <p className="movie__title--skeleton"></p>
                     <div className="img__body--skeleton"></div>
